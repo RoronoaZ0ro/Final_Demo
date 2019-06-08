@@ -57,7 +57,8 @@ public class School {
 				}
 			}
 		}
-		System.out.println(Release_list + "\n");
+		System.out.println(Release_list);
+		System.out.println();
 		return Release_list;
 	}
 	
