@@ -27,7 +27,7 @@ public class School {
 	public List<String> Release() {
 		int count_Primary = 0;
 		int count_Secondary = 0;
-		
+		System.out.println(this.School_name + "¡G");
 		List Score_list_set = new ArrayList(new TreeSet(Score_list)); 
 		Collections.reverse(Score_list_set);
 		
@@ -57,6 +57,8 @@ public class School {
 				}
 			}
 		}
+		System.out.println(Release_list);
+		System.out.println();
 		return Release_list;
 	}
 	
