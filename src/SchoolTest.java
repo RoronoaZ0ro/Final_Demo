@@ -136,5 +136,43 @@ public class SchoolTest {
 		
 		
 	}
-
+	
+	@Test
+	public void test4() {
+		System.out.println("Test4:");
+		School sc1 = new School("台大", 2, 1);
+		
+		String School_list[] = {"台大","清大"};
+		Student st1 = new Student("Student_1", 80, School_list);
+		
+		String School_list_2[] = {"台大"};
+		Student st2 = new Student("Student_2", 80, School_list_2);
+		
+		String School_list_3[] = {"台大"};
+		Student st3 = new Student("Student_3", 80, School_list_3);
+		
+		String School_list_4[] = {"台大"};
+		Student st4 = new Student("Student_4", 60, School_list_4);
+		
+		String School_list_5[] = {"台大"};
+		Student st5 = new Student("Student_5", 79, School_list_5);
+		
+		Student[] Students = {st1,st2,st3,st4,st5};
+		
+		for(int i = 0;i<Students.length;i++) {
+			for(int j = 0; j < Students[i].getSchool_list().length; j++) {
+				if(sc1.getSchool_name().equals(Students[i].getSchool(j))) {
+					sc1.send_Score(Students[i].getStudent_name(), Students[i].getScore());
+				}
+			}
+		}
+		
+		List<String> Result_list = new ArrayList<String>();
+		Result_list.add("Student_1" + " Primary");
+		Result_list.add("Student_2" + " Primary");
+		Result_list.add("Student_3" + " Primary");
+		Result_list.add("Student_5" + " Secondary");
+		Result_list.add("Student_4" + " None");
+		assertEquals(Result_list,sc1.Release());
+	}
 }
